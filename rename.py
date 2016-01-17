@@ -7,7 +7,7 @@ import datetime
 # adjust time difference before proceeding
 TIMESHIFT = {
     'hr': 0,
-    'min': -24
+    'min': 0
 }
 
 #LOGFILE = "renamer_log.txt"
