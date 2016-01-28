@@ -3,8 +3,10 @@ import glob
 import Image
 import shutil
 import datetime
+import json
+import re
 
-USE_DATE = False # add date stamp to file name: set to False if images already renamed
+#USE_DATE = False # add date stamp to file name: set to False if images already renamed
 
 # adjust time difference before proceeding
 TIMESHIFT = {
@@ -28,6 +30,7 @@ RENDITIONS = {
 }
 
 ORIG_EXT = ".JPG"
+JSON_FNAME = 'directory.json'
 
 #logfile = None
 
@@ -48,9 +51,11 @@ def format_time(ts):
 
 
 def make_filename(old_name, size_label, ts=0, ext='.jpg'):
+    # do not use date prefix if file name starts with digits
+    use_date = not re.match(r"^\d+.*$", old_name)
     old_name = old_name.lower().replace('_', '-')
     name,suf = os.path.splitext(old_name)
-    new_name = '%s-%s-%s%s' % (format_time(ts), name, size_label, ext) if ts and USE_DATE else '%s-%s%s' % (name, size_label, ext)
+    new_name = '%s-%s-%s%s' % (format_time(ts), name, size_label, ext) if ts and use_date else '%s-%s%s' % (name, size_label, ext)
     return new_name
 
 def process_image(orig_fname):
@@ -59,6 +64,7 @@ def process_image(orig_fname):
     st = os.stat(orig_fname)
     ts = st.st_mtime
     #im = Image.open(orig_fname)
+    ret = {'title': orig_fname, 'name': orig_fname, 'sources': {}}
     for label,conf in RENDITIONS.iteritems():
         im = Image.open(orig_fname)
         log('resizing to %s...' % label)
@@ -77,17 +83,31 @@ def process_image(orig_fname):
             log('cropping to box (%s, %s, %s, %s)' % box, True)
             im = im.crop(box)
         new_fname = make_filename(orig_fname, label, ts, '.jpg')
+        ret['sources'][label] = new_fname
         q = conf['quality']
         im.save(new_fname, "JPEG", quality=q)
         shutil.copystat(orig_fname, new_fname)
     log("done", True)
+    return ret
+    
+def save_data(datadic, fname):
+    txt = json.dumps(datadic)
+    with open(fname, 'wb') as fp:
+        fp.write(txt)
+    
 
 
 def do_the_job():
-    LOGFILE['file'] = open(LOGFILE['name'], 'w')
+    #LOGFILE['file'] = open(LOGFILE['name'], 'w')
+    #dn = os.path.basename(os.path.dirname(__file__))
+    dn = os.path.basename(os.getcwd())
+    datadic = {'title': dn, 'dirname': dn, 'pics': []}
+    
     for fn in glob.iglob('*.JPG'):
         log("processing '%s'..." % fn, True)
-        process_image(fn)
+        dataitem = process_image(fn)
+        datadic['pics'].append(dataitem)
+    save_data(datadic, JSON_FNAME)
     log("Done!", True)
 
 
