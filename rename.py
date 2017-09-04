@@ -2,7 +2,7 @@ import os
 import glob
 import datetime
 
-# Renames images in place!!! Use copies only
+# Rename images in place!!! Use copies only
 
 # adjust time difference before proceeding
 TIMESHIFT = {

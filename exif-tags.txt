@@ -1,0 +1,130 @@
+MakerNote ContinuousDriveMode
+EXIF FocalPlaneYResolution
+Image ExifOffset
+EXIF ComponentsConfiguration
+MakerNote Tag 0x4008
+EXIF CustomRendered
+MakerNote ExposureMode
+MakerNote Sharpness
+EXIF FocalPlaneResolutionUnit
+EXIF MeteringMode
+MakerNote ToningEffect
+MakerNote EasyShootingMode
+Interoperability InteroperabilityVersion
+MakerNote FocalUnitsPerMM
+EXIF DateTimeOriginal
+MakerNote Tag 0x0099
+MakerNote SequenceNumber
+MakerNote CropInfo 
+EXIF ExposureBiasValue
+MakerNote SerialNumberFormat
+MakerNote FocusMode
+MakerNote ColorSpace
+MakerNote FirmwareVersion
+EXIF ExifImageWidth
+MakerNote Unknown
+EXIF SubSecTimeOriginal
+MakerNote FocalLength
+Image XResolution
+MakerNote RawJpgQuality
+Image YResolution
+Interoperability InteroperabilityIndex
+MakerNote FlashInfo
+MakerNote WBBracketMode
+MakerNote MeteringMode
+MakerNote FileNumber
+MakerNote BracketValue
+MakerNote WBBracketValueGM
+EXIF ShutterSpeedValue
+MakerNote BracketMode
+MakerNote LensType
+MakerNote Quality
+MakerNote BracketShotNumber
+Thumbnail ResolutionUnit
+MakerNote WhiteBalance
+EXIF ExposureTime
+MakerNote ImageType
+MakerNote Tag 0x00AA
+Image YCbCrPositioning
+MakerNote ISO
+MakerNote NumAFPoints
+Thumbnail XResolution
+MakerNote Saturation
+MakerNote LiveViewShooting
+MakerNote ImageSize
+MakerNote AFPointSelected
+Thumbnail JPEGInterchangeFormatLength
+MakerNote SerialNumber
+EXIF ExposureMode
+MakerNote ModelID
+MakerNote RecordMode
+MakerNote Tag 0x00A0
+JPEGThumbnail
+EXIF ColorSpace
+EXIF FocalLength
+MakerNote ManualFlashOutput
+EXIF SubSecTimeDigitized
+MakerNote FlashBias
+MakerNote FlashMode
+MakerNote WBBracketValueAB
+MakerNote ThumbnailImageValidArea
+MakerNote InternalSerialNumber 
+EXIF FlashPixVersion
+MakerNote LensModel
+EXIF Flash
+MakerNote AESetting
+Thumbnail JPEGInterchangeFormat
+MakerNote FocalType
+EXIF ExifImageLength
+MakerNote Macromode
+MakerNote OwnerName
+MakerNote FocusType
+MakerNote SubjectDistance
+MakerNote FilterEffect
+MakerNote SpotMeteringMode
+Thumbnail Compression
+MakerNote SelfTimer
+MakerNote FlashDetails
+EXIF SceneCaptureType
+MakerNote CanonImageWidth
+MakerNote SlowShutter
+Image Make
+EXIF WhiteBalance
+EXIF ISOSpeedRatings
+MakerNote ImageStabilization
+EXIF MakerNote
+EXIF FocalPlaneXResolution
+MakerNote Contrast
+MakerNote AFPointUsed
+Image DateTime <-------------------------------------
+MakerNote RawJpgSize
+MakerNote MacroMagnification
+MakerNote Tag 0x00D0
+EXIF ExifVersion
+MakerNote ValidAFPoints
+Thumbnail YResolution
+EXIF SubSecTime
+MakerNote Tag 0x4001
+Image Model
+MakerNote DigitalZoom
+EXIF ApertureValue
+EXIF InteroperabilityOffset
+MakerNote Tag 0x4009
+EXIF FNumber
+Image ResolutionUnit
+MakerNote Tag 0x0019
+MakerNote AFAreaMode
+EXIF ExposureProgram
+MakerNote DustRemovalData 
+MakerNote Tag 0x00E0
+EXIF UserComment
+MakerNote Tag 0x0083
+MakerNote Tag 0x4012
+MakerNote Tag 0x4011
+MakerNote Tag 0x4010
+EXIF DateTimeDigitized
+MakerNote LongExposureNoiseReduction2
+MakerNote LongFocalLengthOfLensInFocalUnits
+Image Orientation
+MakerNote FlashActivity
+MakerNote ShortFocalLengthOfLensInFocalUnits

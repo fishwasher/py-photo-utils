@@ -11,7 +11,7 @@ import re
 # adjust time difference before proceeding
 TIMESHIFT = {
     'hr': 0,
-    'min': 0
+    'min': -24
 }
 
 LOGFILE = {
@@ -52,7 +52,7 @@ def format_time(ts):
 
 def make_filename(old_name, size_label, ts=0, ext='.jpg'):
     # do not use date prefix if file name starts with digits
-    use_date = not re.match(r"^\d+.*$", old_name)
+    use_date = not re.match(r"^\d{6,8}-.*$", old_name)
     old_name = old_name.lower().replace('_', '-')
     name,suf = os.path.splitext(old_name)
     new_name = '%s-%s-%s%s' % (format_time(ts), name, size_label, ext) if ts and use_date else '%s-%s%s' % (name, size_label, ext)
@@ -69,12 +69,7 @@ def process_image(orig_fname):
         im = Image.open(orig_fname)
         log('resizing to %s...' % label)
         im.thumbnail(conf['size'], Image.ANTIALIAS)
-        #new_fname = make_filename(orig_fname, label, ts, '.jpg')
-        #q = conf['quality']
-        #im.save(new_fname, "JPEG", quality=q)
-        #shutil.copystat(orig_fname, new_fname)
         if conf['square']:
-            #crop_square(new_fname)
             rat = float(im.size[0]) / float(im.size[1])
             minsize = min(im.size)
             x = ((im.size[0] - minsize) / 2) if rat>1 else 0;
