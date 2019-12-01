@@ -1,4 +1,0 @@
-processing '151221-1543-img-8757.jpg'...
-resizing to tn... cropping to box (40, 0, 200, 160)
-resizing to s... resizing to m... resizing to l... done
-Done!
