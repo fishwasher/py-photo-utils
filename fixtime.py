@@ -34,7 +34,8 @@ def get_file_date(fpath):
     
 
 def get_exif_date(fpath):
-    key = 'Image DateTime'
+    #key = 'Image DateTime'
+    key = 'EXIF DateTimeOriginal'
     try:
         tags = None
         with open(fpath, 'rb') as fp:
