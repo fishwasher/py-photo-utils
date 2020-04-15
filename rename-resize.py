@@ -4,7 +4,7 @@ from PIL import Image
 import shutil
 import datetime
 
-MAXSIZE = 1200, 1200
+MAXSIZE = 2000, 1600
 LOGFILE = "resizer_log.txt"
 
 def mkfname(oldname, prefix=None):
@@ -38,6 +38,6 @@ def do_the_job():
             log += "FAILED!"
             
         logfile.write(log+'\n')
-        print log
+        print(log)
     
 do_the_job()

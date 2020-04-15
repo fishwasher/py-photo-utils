@@ -5,6 +5,7 @@ import datetime
 import re
 import exifread
 
+# IN USE via rn2.bat, on PATH
 # Rename in place image files with uppercase '.JPG' extension only
 # command line arguments:
 # - path to image directory, or '-' for current directory (default)
@@ -22,7 +23,7 @@ def _get_time_shift(hour_min_str):
         if hstr[0] == '-':
             sign = -1
             hstr = hstr[1:]
-        mins = sign * int(hstr) * 60 + int(mstr)
+        mins = sign * int(hstr) * 60 + sign * int(mstr)
         seconds = mins * 60
     return seconds
 
@@ -30,7 +31,7 @@ def _get_time_shift(hour_min_str):
 def _read_input():
     input = sys.argv[1:]
     size = len(input)
-    dir_path = input[0] if size > 0 and input[0] != '-' else os.path.dirname(os.path.abspath(__file__))
+    dir_path = input[0] if size > 0 and input[0] != '-' else os.getcwd() #os.path.dirname(os.path.abspath(__file__))
     time_shift = 0
     use_time = True
     if size > 1:
@@ -92,7 +93,7 @@ class ImageRenamer(object):
     def _newname(self, old_name):
         old_path = self._getpath(old_name)
         pref, timestr = self.get_date_strings(old_path)
-        name = '%s%s' % (pref, old_name.lower().replace('_', ''))
+        name = '%s%s' % (pref, old_name.lower().replace('_', '-'))
         return name, timestr
 
     def _rename(self, old_name, new_name, timestr):
@@ -124,7 +125,7 @@ class ImageRenamer(object):
 
 
 
-print "Testing renaming utility" if IS_TEST else "Renaming strted"
+print "Testing renaming utility" if IS_TEST else "Renaming started"
 d, ut, t = _read_input()
 rn = ImageRenamer(d, ut, t, IS_TEST)
 

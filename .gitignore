@@ -1,5 +1,9 @@
 *-log.txt
+
 *.JPG
 *.jpg
 .idea
 .DS_Store
+
+localdev
+
