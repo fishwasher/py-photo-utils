@@ -5,14 +5,13 @@ import datetime
 import re
 import exifread
 
-# IN USE via rn2.bat, on PATH
 # Rename in place image files with uppercase '.JPG' extension only
 # command line arguments:
 # - path to image directory, or '-' for current directory (default)
 # - optional time adjustment string (e.g. '-1:33'); enter '-' to skip time part in file name
 # - optional prefix
 
-IS_TEST = False
+IS_TEST = True
 
 LOGFILENAME = 'renamed.txt'
 EXIF_DATE_PAT = re.compile(r'\D+')
@@ -118,9 +117,11 @@ class ImageRenamer(object):
         timestr = dt.strftime(s2)
 
         pref = self.prefix + '-' if len(self.prefix) else ''
+        
+        # remove 'IMG_'
+        old_mame = old_name.replace('IMG_', '')
+        
         name = '%s%s%s' % (pref, datestr, old_name.lower().replace('_', '-'))
-
-        #name = '%s%s' % (datestr, old_name.lower().replace('_', '-').replace('wp-', '')) # remove
 
         return name, timestr
 
